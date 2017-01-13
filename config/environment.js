@@ -1,3 +1,4 @@
+var apiKey=require("./../.env").apiKey;
 /* jshint node: true */
 
 module.exports = function(environment) {
@@ -6,6 +7,12 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: apiKey,
+      authDomain: "answerquestion-7ebbc.firebaseapp.com",
+      databaseURL: "https://answerquestion-7ebbc.firebaseio.com",
+      storageBucket: "answerquestion-7ebbc.appspot.com",
+    }
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
