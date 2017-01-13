@@ -1,26 +1,30 @@
 {{#if editQuestionForm}}
-  <h4>Edit Question</h4>
-  <h4>WARNING! If you edit a question all of its current answers will be deleted.</h4>
-  <div>
-    <form>
-      <div class="form-group">
-        <label for="author">Author</label>
-        {{input value=author id="author" placeholder=question.author}}
-      </div>
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      <h4>WARNING! If you edit a question all of its current answers will be deleted.</h4>
+    </div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label for="author">Author</label>
+          {{input value=author id="author" placeholder=question.author}}
+        </div>
 
-      <div class="form-group">
-        <label for="text">Question text:</label>
-        {{input value=text id="text"}}
-      </div>
+        <div class="form-group">
+          <label for="text">Question text:</label>
+          {{input value=text id="text" placeholder=question.text}}
+        </div>
 
-      <div class="form-group">
-        <label for="notes">Additional notes:</label>
-        {{input value=notes id="notes"}}
-      </div>
+        <div class="form-group">
+          <label for="notes">Additional notes:</label>
+          {{input value=notes id="notes" placeholder=question.notes}}
+        </div>
 
-      <button {{action 'updateQuestion' question}}>Save</button>
-    </form>
+        <button class="btn" {{action 'updateQuestion' question}}>Save</button>
+        <button class="btn" {{action 'cancel'}}>Cancel</button>
+      </form>
+    </div>
   </div>
 {{else}}
-  <button {{action 'editQuestionForm'}}>Edit Question</button>
+  <button class="btn" {{action 'editQuestionForm'}}>Edit Question</button>
 {{/if}}
