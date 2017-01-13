@@ -13,6 +13,20 @@ export default Ember.Route.extend({
         return question.save();
       });
       this.transitionTo('index');
+    },
+    updateQuestion(question, params) {
+      if (confirm('Are you sure you want to delete all current answers and change the question?')) {
+        var answerList = question.get('answers').map(function(answer) {
+        return answer.destroyRecord();
+        });
+        Object.keys(params).forEach(function(key) {
+          if(params[key]!==undefined) {
+            question.set(key,params[key]);
+          }
+        });
+        question.save();
+        this.transitionTo('index');
+      }
     }
   }
 });
