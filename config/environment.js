@@ -12,7 +12,7 @@ module.exports = function(environment) {
       authDomain: "answerquestion-7ebbc.firebaseapp.com",
       databaseURL: "https://answerquestion-7ebbc.firebaseio.com",
       storageBucket: "answerquestion-7ebbc.appspot.com",
-    }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
