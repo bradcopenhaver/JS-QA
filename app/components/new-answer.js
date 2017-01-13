@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  newAnswerForm: false,
   actions: {
-    newAnswerForm() {
-      this.set('newAnswerForm', true);
+    clear() {
+      this.set('author', "");
+      this.set('text', "");
+      this.set('sources', "");
     },
     saveAnswer(question) {
       var params = {
@@ -13,8 +14,10 @@ export default Ember.Component.extend({
         sources: this.get('sources'),
         question: this.get('question')
       };
-      this.set('newAnswerForm', false);
       this.sendAction('saveAnswer', params);
+      this.set('author', "");
+      this.set('text', "");
+      this.set('sources', "");
     }
   }
 });

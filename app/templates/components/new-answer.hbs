@@ -1,9 +1,11 @@
-{{#if newAnswerForm}}
-  <h4>Add a New Answer</h4>
-  <div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4>Add a New Answer</h4>
+  </div>
+  <div class="panel-body">
     <form>
       <div class="form-group">
-        <label for="author">Author</label>
+        <label for="author">Author:</label>
         {{input value=author id="author"}}
       </div>
 
@@ -18,8 +20,7 @@
       </div>
 
       <button {{action 'saveAnswer'}}>Post</button>
+      <button {{action 'clear'}}>Clear</button>
     </form>
   </div>
-{{else}}
-  <button {{action 'newAnswerForm'}}>Add a New Answer</button>
-{{/if}}
+</div>

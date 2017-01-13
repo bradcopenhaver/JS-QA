@@ -1,11 +1,14 @@
-<h4>{{model.author}} asks:</h4>
-<h4>{{model.text}}</h4>
-<p>Additional info: {{model.notes}}</p>
+<div class="col-sm-6">
+  <h3>{{model.author}} asks: {{model.text}}</h3>
+  <p>Additional info: {{model.notes}}</p>
 
-{{edit-question updateQuestion='updateQuestion' question=model}}
-{{new-answer saveAnswer='saveAnswer' question=model}}
-
-<h4>Answers:</h4>
-{{#each model.answers as |answer|}}
-  {{answer-tile answer=answer}}
-{{/each}}
+  {{edit-question updateQuestion='updateQuestion' question=model}}
+  <hr>
+  <h4>Answers:</h4>
+  {{#each model.answers as |answer|}}
+    {{answer-tile answer=answer}}
+  {{/each}}
+</div>
+<div class="col-sm-offset-2 col-sm-4">
+  {{new-answer saveAnswer='saveAnswer' question=model}}
+</div>

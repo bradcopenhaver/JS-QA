@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  newQuestionForm: false,
   actions: {
-    newQuestionForm() {
-      this.set('newQuestionForm', true);
+    clear() {
+      this.set('author', "");
+      this.set('text', "");
+      this.set('notes', "");
     },
     save() {
       var params = {
@@ -12,8 +13,10 @@ export default Ember.Component.extend({
         text: this.get('text'),
         notes: this.get('notes')
       };
-      this.set('newQuestionForm', false);
       this.sendAction('save', params);
+      this.set('author', "");
+      this.set('text', "");
+      this.set('notes', "");
     }
   }
 });
