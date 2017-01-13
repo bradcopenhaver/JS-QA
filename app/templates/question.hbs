@@ -1,0 +1,9 @@
+<h4>{{model.author}} asks:</h4>
+<h4>{{model.text}}</h4>
+<p>Additional info: {{model.notes}}</p>
+
+{{#each model.answers as |answer|}}
+  {{@index}}: {{answer-tile answer=answer}}
+{{/each}}
+
+{{new-answer saveAnswer='saveAnswer' question=model}}
