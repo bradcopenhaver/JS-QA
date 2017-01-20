@@ -6,17 +6,17 @@
     <form>
       <div class="form-group">
         <label for="author">Author:</label>
-        {{input value=author id="author"}}
+        {{input value=answerAuthor id="answerAuthor"}}
       </div>
 
       <div class="form-group">
         <label for="text">Answer text:</label>
-        {{input value=text id="text"}}
+        {{input value=answerText id="answerText"}}
       </div>
 
       <div class="form-group">
         <label for="sources">Info sources:</label>
-        {{input value=sources id="sources"}}
+        {{input value=answerSources id="answerSources"}}
       </div>
 
       <button class="btn" {{action 'saveAnswer'}}>Post</button>
